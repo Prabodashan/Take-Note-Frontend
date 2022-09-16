@@ -1,7 +1,6 @@
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
-const { ErrorHandler } = require("./Middleware/ErrorMiddleware");
 
 const connectDB = require("./Config/Db");
 connectDB();
@@ -13,8 +12,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.use("/api/notes", require("./Routes/NoteRoutes"));
+// Basic route
+app.get("/", (req, res) => {
+  res.send(`Welcome to the server!`);
+});
 
-// app.use(ErrorHandler);
+// app.use("/api/notes", require("./Routes/NoteRoutes"));
+app.use("/api/users", require("./Routes/UserRoutes"));
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
