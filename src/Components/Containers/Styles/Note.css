@@ -1,0 +1,46 @@
+.note {
+  padding: 25px;
+  height: 280px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+  border-radius: 30px;
+}
+
+.note-title {
+  flex: 1;
+  resize: none;
+  background-color: transparent;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.note-text {
+  flex: 4;
+  resize: none;
+  background-color: transparent;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  outline: none;
+  border: none;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-footer img {
+  cursor: pointer;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.note:hover .note-footer img {
+  opacity: 1;
+}

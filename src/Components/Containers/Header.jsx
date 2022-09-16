@@ -2,7 +2,7 @@ import React from "react";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-import './Styles/Custom.css'
+import "./Styles/Header.css";
 
 const Header = () => {
   return (
