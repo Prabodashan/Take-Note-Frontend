@@ -5,7 +5,7 @@
   padding: 40px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .home-container {
     position: relative;
   }
