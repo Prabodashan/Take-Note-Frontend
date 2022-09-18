@@ -1,10 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import Note from "./Note";
+
 import "./Styles/NoteContainer.css";
+import { getNotes, reset } from "../../Slices/NoteSlices";
+import Spinner from "./Spinner";
 
-const NoteContainer = (props) => {
+const NoteContainer = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const notes = props.notes;
+  const { user } = useSelector((state) => state.auth);
+  const { notes, isLoading, isError, message } = useSelector(
+    (state) => state.notes
+  );
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+
+    if (!user) {
+      navigate("/login");
+    }
+
+    dispatch(getNotes());
+
+    return () => {
+      dispatch(reset());
+    };
+  }, [user, navigate, isError, message, dispatch]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="note-container">
