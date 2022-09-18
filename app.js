@@ -2,6 +2,8 @@ const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
 
+const cors = require("cors");
+
 const connectDB = require("./Config/Db");
 connectDB();
 
@@ -9,6 +11,8 @@ const port = process.env.PORT || 3300;
 
 const app = express();
 
+//common middlewares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

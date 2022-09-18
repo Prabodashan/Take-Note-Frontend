@@ -15,6 +15,10 @@ const noteSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a title value"],
     },
+    color: {
+      type: String,
+      required: [true, "Please add a color value"],
+    },
   },
   {
     timestamps: true,

@@ -25,8 +25,12 @@ const setNote = async (req, res) => {
   if (!req.body.title) {
     return res.status(400).json({ message: "Please add a title field" });
   }
+  if (!req.body.color) {
+    return res.status(400).json({ message: "Please add a color field" });
+  }
   try {
     const note = await Note.create({
+      color: req.body.color,
       text: req.body.text,
       title: req.body.title,
       user: req.user.id,
