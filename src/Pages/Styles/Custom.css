@@ -1,0 +1,12 @@
+.home-container {
+  margin-top: -50px;
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+@media (max-width: 1000px) {
+  .home-container {
+    position: relative;
+  }
+}
