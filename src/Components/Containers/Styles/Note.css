@@ -1,5 +1,5 @@
 .note {
-  padding: 25px;
+  padding: 5px;
   height: 280px;
   width: 260px;
   display: flex;
@@ -29,16 +29,46 @@
   border: none;
 }
 
-.note-footer {
+.note-body {
+  margin: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  flex: 4;
 }
 
-.note-footer img {
+.note-top {
+  position: relative;
+}
+
+.note-top img {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
   cursor: pointer;
   opacity: 0;
   transition: 300ms;
+}
+
+.note-footer {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.note-footer img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.note:hover .note-top img {
+  opacity: 1;
 }
 
 .note:hover .note-footer img {
