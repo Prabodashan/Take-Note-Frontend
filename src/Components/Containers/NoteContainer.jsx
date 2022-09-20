@@ -25,7 +25,9 @@ const NoteContainer = () => {
       navigate("/login");
     }
 
-    dispatch(getNotes());
+    if (user) {
+      dispatch(getNotes());
+    }
 
     return () => {
       dispatch(reset());
