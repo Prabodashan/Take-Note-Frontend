@@ -1,0 +1,52 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 70vh;
+}
+
+.sidebar img {
+  width: 60px;
+  cursor: pointer;
+}
+
+.sidebar_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  height: 0;
+  transition: 300ms;
+}
+
+.sidebar_list_active {
+  height: 300px;
+}
+
+.sidebar_list_item {
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  list-style: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    position: fixed;
+    bottom: 50px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+
+  .sidebar_list {
+    position: fixed;
+    bottom: 150px;
+  }
+
+  .sidebar_list_active {
+    height: 200px;
+  }
+}
